@@ -17,4 +17,25 @@ public class Client {
     String phoneNumber;
     String meterType;
     int accountNumber;
+    double outstandingBalance;
+    
+    public void Client() {
+        firstName = "";
+        lastName = "";
+        address = "";
+        phoneNumber = "";
+        meterType = "";
+        accountNumber = 0;
+        outstandingBalance = 0.0;
+    }
+    
+    public void enterInfo(String fName, String lName, String add, String phone, String meterT, int accNum, double outBal) {
+        firstName = fName;
+        lastName = lName;
+        address = add;
+        phoneNumber = phone;
+        meterType = meterT;
+        accountNumber = accNum;
+        outstandingBalance = outBal;
+    }
 }
