@@ -50,27 +50,27 @@ public class SecretaryPage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         addAccAddress = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        meterABtn = new javax.swing.JRadioButton();
+        meterCBtn = new javax.swing.JRadioButton();
+        meterBBtn = new javax.swing.JRadioButton();
+        meterDBtn = new javax.swing.JRadioButton();
+        meterEBtn = new javax.swing.JRadioButton();
+        meterFBtn = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
         userHeader = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         addAccPhone = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        searchFirst = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        searchLast = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         addAccount_btn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        searchAccNum = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,23 +95,23 @@ public class SecretaryPage extends javax.swing.JFrame {
 
         jLabel5.setText("Meter Type: ");
 
-        meterTypeGroup.add(jRadioButton1);
-        jRadioButton1.setText("A");
+        meterTypeGroup.add(meterABtn);
+        meterABtn.setText("A");
 
-        meterTypeGroup.add(jRadioButton2);
-        jRadioButton2.setText("C");
+        meterTypeGroup.add(meterCBtn);
+        meterCBtn.setText("C");
 
-        meterTypeGroup.add(jRadioButton3);
-        jRadioButton3.setText("B");
+        meterTypeGroup.add(meterBBtn);
+        meterBBtn.setText("B");
 
-        meterTypeGroup.add(jRadioButton4);
-        jRadioButton4.setText("D");
+        meterTypeGroup.add(meterDBtn);
+        meterDBtn.setText("D");
 
-        meterTypeGroup.add(jRadioButton5);
-        jRadioButton5.setText("E");
+        meterTypeGroup.add(meterEBtn);
+        meterEBtn.setText("E");
 
-        meterTypeGroup.add(jRadioButton6);
-        jRadioButton6.setText("F");
+        meterTypeGroup.add(meterFBtn);
+        meterFBtn.setText("F");
 
         jButton2.setText("Logout");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +155,12 @@ public class SecretaryPage extends javax.swing.JFrame {
 
         jLabel12.setText("Account number: ");
 
-        jButton5.setText("search");
+        searchBtn.setText("search");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,7 +170,7 @@ public class SecretaryPage extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton5)
+                        .addComponent(searchBtn)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -188,13 +193,13 @@ public class SecretaryPage extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(24, 24, 24)
-                                            .addComponent(jRadioButton1)
+                                            .addComponent(meterABtn)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jRadioButton3))
+                                            .addComponent(meterBBtn))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jRadioButton2)
+                                            .addComponent(meterCBtn)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jRadioButton4)))
+                                            .addComponent(meterDBtn)))
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,8 +208,8 @@ public class SecretaryPage extends javax.swing.JFrame {
                                         .addComponent(addAccPhone)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jRadioButton6)
-                                                .addComponent(jRadioButton5))
+                                                .addComponent(meterFBtn)
+                                                .addComponent(meterEBtn))
                                             .addGap(0, 0, Short.MAX_VALUE)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,12 +220,12 @@ public class SecretaryPage extends javax.swing.JFrame {
                                             .addComponent(jLabel11))
                                         .addGap(1, 1, 1)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField5)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(searchFirst)
+                                            .addComponent(searchLast, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel12)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(searchAccNum, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(75, 75, 75)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,14 +277,14 @@ public class SecretaryPage extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton5))
+                            .addComponent(meterABtn)
+                            .addComponent(meterBBtn)
+                            .addComponent(meterEBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton6))
+                            .addComponent(meterCBtn)
+                            .addComponent(meterDBtn)
+                            .addComponent(meterFBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -291,17 +296,17 @@ public class SecretaryPage extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(searchFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(searchLast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(searchAccNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(searchBtn)
                 .addGap(37, 37, 37))
         );
 
@@ -325,11 +330,28 @@ public class SecretaryPage extends javax.swing.JFrame {
     private void addAccount_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAccount_btnActionPerformed
         // TODO add your handling code here:
         Client newClient = new Client();
-        newClient.enterInfo(addAccFName.getText(), addAccLName.getText(), addAccAddress.getText(), addAccPhone.getText(), meterTypeGroup.getSelection().toString(), newAccNum(), 0.0);
+        newClient.enterInfo(addAccFName.getText(), addAccLName.getText(), addAccAddress.getText(), addAccPhone.getText(), getMeterTypeSelection(), newAccNum(), 0.0);
         clients.add(newClient);
         refreshTable();
     }//GEN-LAST:event_addAccount_btnActionPerformed
 
+    public String getMeterTypeSelection() {
+        if (meterABtn.isSelected()) {
+            return "A";
+        } else if (meterBBtn.isSelected()) {
+            return "B";
+        } else if (meterCBtn.isSelected()) {
+            return "C";
+        } else if (meterDBtn.isSelected()) {
+            return "D";
+        } else if (meterEBtn.isSelected()) {
+            return "E";
+        } else if (meterFBtn.isSelected()) {
+            return "F";
+        } else
+            return "Not specified";
+    }
+    
     private int newAccNum() {
         int newNum;
         if (clients.isEmpty()) {
@@ -345,6 +367,10 @@ public class SecretaryPage extends javax.swing.JFrame {
     clients.remove(table.getSelectedRow());
     refreshTable();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        //ignore. doesn't exist, but won't go away.
+    }//GEN-LAST:event_searchBtnActionPerformed
 
     public void refreshTable() {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -406,7 +432,6 @@ public class SecretaryPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -417,17 +442,18 @@ public class SecretaryPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JRadioButton meterABtn;
+    private javax.swing.JRadioButton meterBBtn;
+    private javax.swing.JRadioButton meterCBtn;
+    private javax.swing.JRadioButton meterDBtn;
+    private javax.swing.JRadioButton meterEBtn;
+    private javax.swing.JRadioButton meterFBtn;
     private javax.swing.ButtonGroup meterTypeGroup;
+    private javax.swing.JTextField searchAccNum;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JTextField searchFirst;
+    private javax.swing.JTextField searchLast;
     private javax.swing.JTable table;
     private javax.swing.JLabel userHeader;
     // End of variables declaration//GEN-END:variables

@@ -102,6 +102,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="View Stats"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
@@ -113,7 +116,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Insert Usage File"/>
+            <Property name="text" type="java.lang.String" value="Import Meter Readings"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
