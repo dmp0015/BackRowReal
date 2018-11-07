@@ -9,7 +9,7 @@ package backrow;
  * @author dmich
  */
 public abstract class Meter {
-    String type;
-    String size;
-    double minPrice;
+    String type = this.type;
+    String size = this.size;
+    double minPrice = this.minPrice;
 }

@@ -346,21 +346,21 @@ public class SecretaryPage extends javax.swing.JFrame {
         refreshTable();
     }//GEN-LAST:event_addAccount_btnActionPerformed
 
-    public String getMeterTypeSelection() {
+    public Meter getMeterTypeSelection() {
         if (meterABtn.isSelected()) {
-            return "A";
+            return new MeterA();
         } else if (meterBBtn.isSelected()) {
-            return "B";
+            return new MeterB();
         } else if (meterCBtn.isSelected()) {
-            return "C";
+            return new MeterC();
         } else if (meterDBtn.isSelected()) {
-            return "D";
+            return new MeterD();
         } else if (meterEBtn.isSelected()) {
-            return "E";
+            return new MeterE();
         } else if (meterFBtn.isSelected()) {
-            return "F";
+            return new MeterF();
         } else
-            return "Not specified";
+            return null;
     }
     
     private int newAccNum() {
@@ -395,7 +395,7 @@ public class SecretaryPage extends javax.swing.JFrame {
             String dataAccNum = Integer.toString(clients.get(i).accountNumber);
             String dataLastName = clients.get(i).lastName;
             String dataFirstName = clients.get(i).firstName;
-            String dataMeterType = clients.get(i).meterType;
+            String dataMeterType = clients.get(i).meter.type;
             String dataPhoneNum = clients.get(i).phoneNumber;
             String dataOutstandingBalance = Double.toString(clients.get(i).outstandingBalance);
     

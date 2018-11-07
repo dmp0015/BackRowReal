@@ -15,7 +15,7 @@ public class Client {
     String lastName;
     String address;
     String phoneNumber;
-    Meter meterType;
+    Meter meter;
     int accountNumber;
     double outstandingBalance;
     Bill bill;
@@ -26,19 +26,19 @@ public class Client {
         lastName = "";
         address = "";
         phoneNumber = "";
-        meterType = null;
+        meter = null;
         meterNumber = 0;
         accountNumber = 0;
         outstandingBalance = 0.0;
         bill = null;
     }
     
-    public void enterInfo(String fName, String lName, String add, String phone, Meter meterT, int accNum, double outBal) {
+    public void enterInfo(String fName, String lName, String add, String phone, Meter meter, int accNum, double outBal) {
         firstName = fName;
         lastName = lName;
         address = add;
         phoneNumber = phone;
-        meterType = meterT;
+        this.meter = meter;
         accountNumber = accNum;
         outstandingBalance = outBal;
         bill = new Bill();
