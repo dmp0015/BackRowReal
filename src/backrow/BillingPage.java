@@ -32,7 +32,9 @@ public class BillingPage extends javax.swing.JFrame {
         generateBillBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
         setMinimumSize(getPreferredSize());
+        setResizable(false);
 
         generateBillBtn.setText("Generate Bill");
         generateBillBtn.addActionListener(new java.awt.event.ActionListener() {

@@ -18,6 +18,8 @@ public class Client {
     String meterType;
     int accountNumber;
     double outstandingBalance;
+    Bill bill;
+    int meterNumber;
     
     public void Client() {
         firstName = "";
@@ -25,8 +27,10 @@ public class Client {
         address = "";
         phoneNumber = "";
         meterType = "";
+        meterNumber = 0;
         accountNumber = 0;
         outstandingBalance = 0.0;
+        bill = null;
     }
     
     public void enterInfo(String fName, String lName, String add, String phone, String meterT, int accNum, double outBal) {
@@ -37,5 +41,8 @@ public class Client {
         meterType = meterT;
         accountNumber = accNum;
         outstandingBalance = outBal;
+        bill = new Bill();
+        meterNumber = 0;//set this when it comes time to display meter numbers.
+        
     }
 }
