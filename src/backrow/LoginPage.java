@@ -117,9 +117,8 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
         // TODO add your handling code here:
-        if((username.getText().equals("ntsmith")|username.getText().equals("user")) && password.getText().equals("password")){
+        if((username.getText().equals("ntsmith")||username.getText().equals("user")) && password.getText().equals("password")){
             new HomePage().setVisible(true);
-            
             this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(null, "Login Failure");
