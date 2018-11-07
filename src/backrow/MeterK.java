@@ -10,14 +10,11 @@ package backrow;
  *
  * @author dmich
  */
-public class MeterE extends Meter {
-    String size;
-    double minPrice;
-    String type;
-
-    public MeterE() {
-        this.type = "A";
-        this.minPrice = 10.00;
-        this.size = "1/2 inch";
+public class MeterK extends Meter {
+    
+    public MeterK() {
+        this.type = "K";
+        this.minPrice = 244.32;
+        this.size = "2 inches";
     }
 }

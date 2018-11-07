@@ -51,11 +51,11 @@ public class SecretaryPage extends javax.swing.JFrame {
         addAccAddress = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         meterABtn = new javax.swing.JRadioButton();
-        meterCBtn = new javax.swing.JRadioButton();
+        meterKBtn = new javax.swing.JRadioButton();
         meterBBtn = new javax.swing.JRadioButton();
-        meterDBtn = new javax.swing.JRadioButton();
-        meterEBtn = new javax.swing.JRadioButton();
+        meterNBtn = new javax.swing.JRadioButton();
         meterFBtn = new javax.swing.JRadioButton();
+        meterRBtn = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
         userHeader = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -99,20 +99,20 @@ public class SecretaryPage extends javax.swing.JFrame {
         meterTypeGroup.add(meterABtn);
         meterABtn.setText("A");
 
-        meterTypeGroup.add(meterCBtn);
-        meterCBtn.setText("C");
+        meterTypeGroup.add(meterKBtn);
+        meterKBtn.setText("K");
 
         meterTypeGroup.add(meterBBtn);
         meterBBtn.setText("B");
 
-        meterTypeGroup.add(meterDBtn);
-        meterDBtn.setText("D");
-
-        meterTypeGroup.add(meterEBtn);
-        meterEBtn.setText("E");
+        meterTypeGroup.add(meterNBtn);
+        meterNBtn.setText("N");
 
         meterTypeGroup.add(meterFBtn);
         meterFBtn.setText("F");
+
+        meterTypeGroup.add(meterRBtn);
+        meterRBtn.setText("R");
 
         jButton2.setText("Logout");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -205,9 +205,9 @@ public class SecretaryPage extends javax.swing.JFrame {
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(meterBBtn))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(meterCBtn)
+                                            .addComponent(meterKBtn)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(meterDBtn)))
+                                            .addComponent(meterNBtn)))
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,8 +216,8 @@ public class SecretaryPage extends javax.swing.JFrame {
                                         .addComponent(addAccPhone)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(meterFBtn)
-                                                .addComponent(meterEBtn))
+                                                .addComponent(meterRBtn)
+                                                .addComponent(meterFBtn))
                                             .addGap(0, 0, Short.MAX_VALUE)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,12 +290,12 @@ public class SecretaryPage extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(meterABtn)
                             .addComponent(meterBBtn)
-                            .addComponent(meterEBtn))
+                            .addComponent(meterFBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(meterCBtn)
-                            .addComponent(meterDBtn)
-                            .addComponent(meterFBtn))
+                            .addComponent(meterKBtn)
+                            .addComponent(meterNBtn)
+                            .addComponent(meterRBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -351,14 +351,14 @@ public class SecretaryPage extends javax.swing.JFrame {
             return new MeterA();
         } else if (meterBBtn.isSelected()) {
             return new MeterB();
-        } else if (meterCBtn.isSelected()) {
-            return new MeterC();
-        } else if (meterDBtn.isSelected()) {
-            return new MeterD();
-        } else if (meterEBtn.isSelected()) {
-            return new MeterE();
-        } else if (meterFBtn.isSelected()) {
+        } else if (meterRBtn.isSelected()) {
             return new MeterF();
+        } else if (meterKBtn.isSelected()) {
+            return new MeterK();
+        } else if (meterNBtn.isSelected()) {
+            return new MeterN();
+        } else if (meterRBtn.isSelected()) {
+            return new MeterR();
         } else
             return null;
     }
@@ -462,10 +462,10 @@ public class SecretaryPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton meterABtn;
     private javax.swing.JRadioButton meterBBtn;
-    private javax.swing.JRadioButton meterCBtn;
-    private javax.swing.JRadioButton meterDBtn;
-    private javax.swing.JRadioButton meterEBtn;
     private javax.swing.JRadioButton meterFBtn;
+    private javax.swing.JRadioButton meterKBtn;
+    private javax.swing.JRadioButton meterNBtn;
+    private javax.swing.JRadioButton meterRBtn;
     private javax.swing.ButtonGroup meterTypeGroup;
     private javax.swing.JTextField searchAccNum;
     private javax.swing.JButton searchBtn;
