@@ -13,5 +13,11 @@ package backrow;
 public class MeterD extends Meter {
     String size;
     double minPrice;
-    String type = "D";
+    String type;
+
+    public MeterD() {
+        this.type = "A";
+        this.minPrice = 10.00;
+        this.size = "1/2 inch";
+    }
 }
