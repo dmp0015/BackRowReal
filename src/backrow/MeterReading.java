@@ -35,10 +35,12 @@ public class MeterReading extends Bill {
         
     }
     
-    public MeterReading(String date, double reading, boolean nTap) {
+    public MeterReading(String date, double reading, boolean nTap, boolean sec, String notes) {
         dateRead = date;
         this.reading = reading;
         newTap = nTap;
+        secDepBool = sec;
+        remarks = notes;
     }
     
     public void setSecurityDep(double secDep) {

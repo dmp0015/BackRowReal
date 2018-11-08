@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 public class SecretaryPage extends javax.swing.JFrame {
     ArrayList<Client> clients = new ArrayList();
+    public static Client selectedClient;
     
     /**
      * Creates new form accounts
@@ -53,7 +54,7 @@ public class SecretaryPage extends javax.swing.JFrame {
         meterABtn = new javax.swing.JRadioButton();
         meterKBtn = new javax.swing.JRadioButton();
         meterBBtn = new javax.swing.JRadioButton();
-        meterNBtn = new javax.swing.JRadioButton();
+        meterDBtn = new javax.swing.JRadioButton();
         meterFBtn = new javax.swing.JRadioButton();
         meterRBtn = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
@@ -72,6 +73,7 @@ public class SecretaryPage extends javax.swing.JFrame {
         searchAccNum = new javax.swing.JTextField();
         searchBtn = new javax.swing.JButton();
         billingBtn = new javax.swing.JButton();
+        viewAccBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,9 +82,18 @@ public class SecretaryPage extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Account#", "Last", "First", "Meter Type", "Phone#", "Balance"
+                "Account#", "Last", "First", "Phone#", "Address", "Meter Type", "Meter Number"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(table);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
@@ -105,8 +116,8 @@ public class SecretaryPage extends javax.swing.JFrame {
         meterTypeGroup.add(meterBBtn);
         meterBBtn.setText("B");
 
-        meterTypeGroup.add(meterNBtn);
-        meterNBtn.setText("N");
+        meterTypeGroup.add(meterDBtn);
+        meterDBtn.setText("N");
 
         meterTypeGroup.add(meterFBtn);
         meterFBtn.setText("F");
@@ -170,6 +181,13 @@ public class SecretaryPage extends javax.swing.JFrame {
             }
         });
 
+        viewAccBtn.setText("View Account Info");
+        viewAccBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAccBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -207,7 +225,7 @@ public class SecretaryPage extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                             .addComponent(meterKBtn)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(meterNBtn)))
+                                            .addComponent(meterDBtn)))
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +257,10 @@ public class SecretaryPage extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton4)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton4)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(viewAccBtn))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(68, 68, 68))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -268,7 +289,9 @@ public class SecretaryPage extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton4)
+                            .addComponent(viewAccBtn)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel1)
@@ -294,7 +317,7 @@ public class SecretaryPage extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(meterKBtn)
-                            .addComponent(meterNBtn)
+                            .addComponent(meterDBtn)
                             .addComponent(meterRBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -355,7 +378,7 @@ public class SecretaryPage extends javax.swing.JFrame {
             return new MeterF();
         } else if (meterKBtn.isSelected()) {
             return new MeterK();
-        } else if (meterNBtn.isSelected()) {
+        } else if (meterDBtn.isSelected()) {
             return new MeterN();
         } else if (meterRBtn.isSelected()) {
             return new MeterR();
@@ -388,6 +411,11 @@ public class SecretaryPage extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_billingBtnActionPerformed
 
+    private void viewAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAccBtnActionPerformed
+        selectedClient = clients.get(table.getSelectedRow());
+        new clientInfoWindow().setVisible(true);
+    }//GEN-LAST:event_viewAccBtnActionPerformed
+
     public void refreshTable() {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0);
@@ -396,11 +424,12 @@ public class SecretaryPage extends javax.swing.JFrame {
             String dataLastName = clients.get(i).lastName;
             String dataFirstName = clients.get(i).firstName;
             String dataMeterType = clients.get(i).meter.type;
+            String dataMeterNum = "MeterNum";
             String dataPhoneNum = clients.get(i).phoneNumber;
-            String dataOutstandingBalance = Double.toString(clients.get(i).outstandingBalance);
+            String dataAddress = clients.get(i).address;
     
 
-            Object[] row = {dataAccNum, dataLastName, dataFirstName, dataMeterType, dataPhoneNum, dataOutstandingBalance};
+            Object[] row = {dataAccNum, dataLastName, dataFirstName, dataPhoneNum, dataAddress, dataMeterType, dataMeterNum};
             model.addRow(row);
         }
     }
@@ -462,9 +491,9 @@ public class SecretaryPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton meterABtn;
     private javax.swing.JRadioButton meterBBtn;
+    private javax.swing.JRadioButton meterDBtn;
     private javax.swing.JRadioButton meterFBtn;
     private javax.swing.JRadioButton meterKBtn;
-    private javax.swing.JRadioButton meterNBtn;
     private javax.swing.JRadioButton meterRBtn;
     private javax.swing.ButtonGroup meterTypeGroup;
     private javax.swing.JTextField searchAccNum;
@@ -473,5 +502,6 @@ public class SecretaryPage extends javax.swing.JFrame {
     private javax.swing.JTextField searchLast;
     private javax.swing.JTable table;
     private javax.swing.JLabel userHeader;
+    private javax.swing.JButton viewAccBtn;
     // End of variables declaration//GEN-END:variables
 }
