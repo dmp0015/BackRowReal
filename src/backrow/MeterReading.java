@@ -25,8 +25,10 @@ public class MeterReading extends Bill {
     String remarks;
     String billingDate;
     boolean newTap;
+    boolean secDepBool;
     double securityDep;
     double newTapFee;
+    int perRate = 1000;
     //finish this when it comes time to display a bill
     
     public MeterReading() {
@@ -57,18 +59,21 @@ public class MeterReading extends Bill {
     
     public void calcAmountCharged() {
         if (galUsed <= 5000) {
-            //amountCharged = roundToLowestThousand(reading - prevReading) * 10.90;
+            amountCharged = (galUsed) * 10.90;
         } else if (galUsed > 5000 && galUsed <= 10000) {
-            //amountCharged = roundToLowestThousand(reading - prevReading) * 10.55;
+            amountCharged = (5000) * 10.90 + (galUsed - 5000) * 10.55;
         } else if (galUsed > 10000 && galUsed <= 20000) {
-            //amountCharged = roundToLowestThousand(reading - prevReading) * 10.00;
+            amountCharged = (5000) * 10.90 + (10000) * 10.55 + (galUsed - 10000) * 10.00;
         } else if (galUsed > 20000 && galUsed <= 30000) {
-            //amountCharged = roundToLowestThousand(reading - prevReading) * 9.45;
+            amountCharged = (5000) * 10.90 + (10000) * 10.55 + (20000) * 10.00 + (galUsed - 20000) * 9.45;
         } else {
-            //amountCharged = roundToLowestThousand(reading - prevReading) * 8.60;
+            amountCharged = (5000) * 10.90 + (10000) * 10.55 + (20000) * 10.00 + (30000) * 9.45 + (galUsed - 30000) * 8.60;
         }
         if (newTap) {
             amountCharged += newTapFee;
+        }
+        if (secDepBool) {
+            amountCharged += securityDep;
         }
     }
     
