@@ -351,7 +351,7 @@ public class SecretaryPage extends javax.swing.JFrame {
             return new MeterA();
         } else if (meterBBtn.isSelected()) {
             return new MeterB();
-        } else if (meterRBtn.isSelected()) {
+        } else if (meterFBtn.isSelected()) {
             return new MeterF();
         } else if (meterKBtn.isSelected()) {
             return new MeterK();
