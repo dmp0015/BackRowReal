@@ -10,10 +10,10 @@ package backrow;
  *
  * @author dmich
  */
-public class MeterReading {
+public class MeterReading extends Bill {
     String dateRead;
     double reading;
-    double galUsed;
+    double galUsed = calcGalUsed();
     double amountCharged;
     double balanceForward;
     double penaltyDisc;
@@ -70,5 +70,15 @@ public class MeterReading {
         if (newTap) {
             amountCharged += newTapFee;
         }
+    }
+    
+    public double calcGalUsed() {
+        double result;
+        if (this.readings.isEmpty()) {
+            result = reading;
+        } else {
+            result = this.reading - readings.get(readings.indexOf(this) - 1).reading;
+        }
+        return result;
     }
 }
