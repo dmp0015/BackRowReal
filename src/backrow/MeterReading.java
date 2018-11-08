@@ -26,6 +26,7 @@ public class MeterReading {
     String billingDate;
     boolean newTap;
     double securityDep;
+    double newTapFee;
     //finish this when it comes time to display a bill
     
     public MeterReading() {
@@ -46,6 +47,10 @@ public class MeterReading {
         billingDate = bDate;
     }
     
+    public void setNewTapFee(double fee) {
+        newTapFee = fee;
+    }
+    
     public void addRemarks(String remark) {
         remarks = remark;
     }
@@ -61,6 +66,9 @@ public class MeterReading {
             //amountCharged = roundToLowestThousand(reading - prevReading) * 9.45;
         } else {
             //amountCharged = roundToLowestThousand(reading - prevReading) * 8.60;
+        }
+        if (newTap) {
+            amountCharged += newTapFee;
         }
     }
 }
