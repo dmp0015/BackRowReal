@@ -174,7 +174,7 @@ public class SecretaryPage extends javax.swing.JFrame {
             }
         });
 
-        billingBtn.setText("Billing");
+        billingBtn.setText("Billing and Payments");
         billingBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 billingBtnActionPerformed(evt);
