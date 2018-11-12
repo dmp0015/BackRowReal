@@ -47,8 +47,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="generateBillBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="297" max="32767" attributes="0"/>
+                  <Component id="createRecieptBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="285" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -56,19 +56,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="266" max="32767" attributes="0"/>
-                  <Component id="generateBillBtn" min="-2" max="-2" attributes="0"/>
+                  <Component id="createRecieptBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="generateBillBtn">
+        <Component class="javax.swing.JButton" name="createRecieptBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Generate Bill"/>
+            <Property name="text" type="java.lang.String" value="Create Reciept"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generateBillBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createRecieptBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

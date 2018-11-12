@@ -30,17 +30,17 @@ public class BillingPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        generateBillBtn = new javax.swing.JButton();
+        createRecieptBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(getPreferredSize());
         setResizable(false);
 
-        generateBillBtn.setText("Generate Bill");
-        generateBillBtn.addActionListener(new java.awt.event.ActionListener() {
+        createRecieptBtn.setText("Create Reciept");
+        createRecieptBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generateBillBtnActionPerformed(evt);
+                createRecieptBtnActionPerformed(evt);
             }
         });
 
@@ -50,14 +50,14 @@ public class BillingPage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(generateBillBtn)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addComponent(createRecieptBtn)
+                .addContainerGap(285, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(266, Short.MAX_VALUE)
-                .addComponent(generateBillBtn)
+                .addComponent(createRecieptBtn)
                 .addContainerGap())
         );
 
@@ -75,9 +75,9 @@ public class BillingPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void generateBillBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateBillBtnActionPerformed
+    private void createRecieptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createRecieptBtnActionPerformed
         new Bill().print();
-    }//GEN-LAST:event_generateBillBtnActionPerformed
+    }//GEN-LAST:event_createRecieptBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,7 +115,7 @@ public class BillingPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton generateBillBtn;
+    private javax.swing.JButton createRecieptBtn;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
